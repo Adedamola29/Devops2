@@ -7,9 +7,15 @@ stages{
 	}
 }
 	stage ('Run ETL Job') {
+	steps{
+		sh 'python3 etl.py'
+	}
+}
+	stage('Save Output') {
 	steps {
 		archiveArtifacts artifacts: 'output.csv' , fingerprint: true
-}
-}
-}
+
+	}
+      }
+    }
 }
