@@ -3,7 +3,7 @@ pipeline {
 stages{
 	stage('Clone repo') {
 	steps {
-	git 'https://github.com/Adedamola29/Devops2'
+	git branch: 'main', url: 'https://github.com/Adedamola29/Devops2'
 	}
 }
 	stage ('Run ETL Job') {
